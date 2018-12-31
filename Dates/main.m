@@ -12,7 +12,12 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSNumber* age = [NSNumber numberWithInt:46];
         
-        NSLog(@"%@", age);
+        int nextYear = [age intValue];
+        nextYear++;
+        
+        age = [NSNumber numberWithInt:nextYear];
+        
+        NSLog(@"next year I will be %@", age);
     }
     return 0;
 }
