@@ -21,6 +21,14 @@ int main(int argc, const char * argv[]) {
         
         NSDate* now = [NSDate date];
         NSLog(@"%@", now);
+        
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        
+        NSString* birthDate = @"October 6 1972";
+        [formatter dateFromString:birthDate];
+        
+        NSLog(@"birthdate is %@", [formatter stringFromDate:now]);
     }
     return 0;
 }
