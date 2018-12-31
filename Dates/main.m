@@ -29,6 +29,25 @@ int main(int argc, const char * argv[]) {
         [formatter dateFromString:birthDate];
         
         NSLog(@"birthdate is %@", [formatter stringFromDate:now]);
+        
+        NSLog(@"-----------------------------------------");
+
+        
+        NSString *born = @"1972-10-06";
+        NSDate *today = [NSDate date];
+        
+        NSDateFormatter *f = [[NSDateFormatter alloc] init];
+        [f setDateFormat:@"yyyy-MM-dd"];
+        
+        NSDate *dateBorn = [f dateFromString:born];
+        
+        NSCalendar *greg = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        
+        NSDateComponents *components = [greg components:NSCalendarUnitSecond
+                                               fromDate:dateBorn
+                                                 toDate:today
+                                                options:0];
+        NSLog(@"%ld", [components second]);
     }
     return 0;
 }
