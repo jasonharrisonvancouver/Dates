@@ -18,6 +18,9 @@ int main(int argc, const char * argv[]) {
         age = [NSNumber numberWithInt:nextYear];
         
         NSLog(@"next year I will be %@", age);
+        
+        NSDate* now = [NSDate date];
+        NSLog(@"%@", now);
     }
     return 0;
 }
